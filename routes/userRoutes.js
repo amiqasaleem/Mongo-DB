@@ -68,27 +68,6 @@ router.put('/users/:id', async (req, res)=>{
 })
 
 // Delete
-router.delete('/users/:id', async(req, res)=>{
-    const {id} = req.params;
-    
-    try{
-        const deletedUser = await UserModel.findByIdAndDelete(id);
-        if(!deletedUser){
-            res.json({
-                succes:false,
-                message: "User not Found"
-            })
-        }
-        res.status(200).json({
-            success:true,
-            message:"User Deleted Successfully"
-        })
-    }
-    catch (err) {
-        res.status(500).json({
-            success: false,
-            message: err.message
-        });
-    }
-})
+
+
 export default router;
